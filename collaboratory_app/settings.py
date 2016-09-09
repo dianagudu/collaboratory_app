@@ -167,3 +167,6 @@ HBP_CONFIG = requests.get('https://collab.humanbrainproject.eu/config.json').jso
 HBP_CONFIG['auth']['clientId'] = os.environ.get('HBP_OIDC_CLIENT_ID')
 
 HBP_COLLAB_SERVICE_URL = HBP_CONFIG['api']['collab']['v0']
+
+# specific to S3
+S3_BASE_URL = "https://141.52.220.79:5000/accesskeyctl/api/v1.0"

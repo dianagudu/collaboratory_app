@@ -7,9 +7,9 @@ class CollaboratoryContext(models.Model):
     software_name_validator = validators.RegexValidator(r'^[0-9a-zA-Z_-]*$')
 
     ctx = models.UUIDField(unique=True)
-    comment = models.CharField(max_length=140, unique=True)
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
+    access_key = models.CharField(max_length=20, unique=True)
+    secret_key = models.CharField(max_length=40, unique=True)
+    uuid = models.CharField(max_length=40, unique=True)
 
     class Meta(object):
         '''meta'''
@@ -19,12 +19,14 @@ class CollaboratoryContext(models.Model):
     # so we add a method that retrieve a more convenient dict.
     def as_json(self):
         return {
-            'comment': self.comment,
+            'access_key': self.access_key,
+            'secret_key': self.secret_key,
+            'uuid': self.uuid,
             'ctx': str(self.ctx),
         }
 
     def __unicode__(self):
-        return str.format("{0}({1})", self.ctx, + self.comment)
+        return str.format("{0}({1},{2},{3})", self.ctx, + self.access_key, + self.secret_key, + self.uuid)
 
     @models.permalink
     def get_absolute_url(self):

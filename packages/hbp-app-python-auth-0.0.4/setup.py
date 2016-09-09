@@ -8,7 +8,7 @@ from optparse import Option
 import pip
 
 #This is a hack to work with newer versions of pip
-if pip.__version__.startswith('1.5') or pip.__version__.startswith('6') or pip.__version__.startswith('7') :
+if pip.__version__.startswith('1.5') or pip.__version__.startswith('6') or pip.__version__.startswith('7') or pip.__version__.startswith('8') :
     from pip.download import PipSession # pylint:disable=E0611
     OPTIONS = Option("--workaround")
     OPTIONS.skip_requirements_regex = None

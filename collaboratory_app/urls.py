@@ -21,5 +21,4 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url('', include('social.apps.django_app.urls', namespace='social')),
     url(r'^$', views.show, name='clbctx_show'),
-    url(r'^edit/$', views.edit, name='clbctx_edit'),
 ]

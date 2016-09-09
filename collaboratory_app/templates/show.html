@@ -3,11 +3,24 @@
 {% block content %}
 <main class="page">
     <header class="page-header">
-        <h1>Show Template</h1>
+        <h2>S3 Credentials</h2>
     </header>
 
     <section role="content">
-        <p>{{model.comment}}</p>
+    <table class="table table-striped">
+      <tr>
+        <td>access key</td>
+        <td> <input type="text" value="{{model.access_key}}" class="form-control" readonly> </input> </td>
+      </tr>
+      <tr>
+        <td>secret key</td>
+        <td> <input type="text" value="{{model.secret_key}}" class="form-control" readonly> </input> </td>
+      </tr>
+      <tr>
+        <td>uuid</td>
+        <td> <input type="text" value="{{model.uuid}}" class="form-control" readonly> </input> </td>
+      </tr>
+    </table>
     </section>
 </main>
 {% endblock %}
